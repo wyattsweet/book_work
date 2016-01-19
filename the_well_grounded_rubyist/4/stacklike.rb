@@ -7,7 +7,7 @@ module Stacklike
 		stack.push(obj)
 	end
 
-	def take_from_stack(pop)
+	def take_from_stack
 		stack.pop
 	end
 end

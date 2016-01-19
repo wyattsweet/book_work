@@ -3,3 +3,4 @@ class Stack
 	include Stacklike
 end
 
+s = Stack.new
