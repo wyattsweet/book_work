@@ -17,10 +17,10 @@ def open_user_file
 	begin
 	  fh = File.open(filename)
 	rescue => e  
-          logfile.puts("user tried to open #{filename}, #{Time.now}")
-          logfile.puts("Exception: #{e.message}")
+          puts "user tried to open #{filename}, #{Time.now}")
+          puts "Exception: #{e.message}"
 	  puts "Couldn't open your file."
-	  raise
+	  return
         end
 	yield fh
 	fh.close
