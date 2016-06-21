@@ -1,3 +1,5 @@
+require 'logger'
+
 #print "Enter a number: "
 #n = gets.to_i
 #begin
@@ -13,11 +15,13 @@ def open_user_file
 	print "File to open: "
 	filename = gets.chomp
 	begin
-		fh = File.open(filename)
-	rescue
-		puts "Couldn't open your file."
-		return
-	end
+	  fh = File.open(filename)
+	rescue => e  
+          puts "user tried to open #{filename}, #{Time.now}")
+          puts "Exception: #{e.message}"
+	  puts "Couldn't open your file."
+	  return
+        end
 	yield fh
 	fh.close
 end
