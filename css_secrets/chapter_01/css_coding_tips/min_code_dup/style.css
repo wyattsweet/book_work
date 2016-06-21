@@ -1,0 +1,29 @@
+body {
+  font-size: 40px;
+  background-color: thistle;
+}
+
+h1 {
+  font-size: 90px;
+  text-shadow: 15px 0 darkred;
+}
+
+button {
+  padding: .3em .8em;
+  border: 1px solid #446d88;
+  background: #58a linear-gradient(hsla(0,0%,100%,.2), transparent);
+  border-radius: .2em;
+  box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+  color: white;
+  text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+  font-size: 125%;
+  line-height: 1.5;
+}
+
+button.ok {
+  background-color: #6b0;
+}
+
+button.cancel {
+  background-color: #c00;
+}
