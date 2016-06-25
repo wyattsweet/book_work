@@ -1,6 +1,6 @@
 body {
   font-size: 40px;
-  background-color: thistle;
+  background-color: lightgoldenrodyellow;  
 }
 
 h1 {
@@ -26,4 +26,13 @@ button.ok {
 
 button.cancel {
   background-color: #c00;
+}
+
+hr {
+  height: .5em;
+  background: currentColor;
+}
+
+#col {
+  column-width: 400px;
 }
