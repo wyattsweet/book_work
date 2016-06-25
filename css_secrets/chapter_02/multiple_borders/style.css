@@ -1,0 +1,17 @@
+.container {
+  background: yellowgreen;
+  width: 500px;
+  height: 500px;
+  margin: 40px auto;
+  box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink, 0 2px 5px 15px rgba(0,0,0,.6);  
+
+}
+
+.container2 {
+  background: yellowgreen;
+  width: 500px;
+  height: 500px;
+  margin: 40px auto;
+  border-radius: 40px; 
+  outline: 5px solid darkgrey;
+}
