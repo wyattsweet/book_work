@@ -1,0 +1,8 @@
+div {
+  height: 50%;
+  width: 50%;
+  color: white;
+  padding: 30px;
+  background: url("bg_image.png") no-repeat #58a bottom right;
+  background-origin: content-box;
+}
