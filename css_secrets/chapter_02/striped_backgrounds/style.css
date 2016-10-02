@@ -1,0 +1,11 @@
+/* Horizontal Strips */
+/*body {
+  background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+  background-size: 100% 90px;
+}*/
+
+/* Verticle Strips */
+body {
+  background: linear-gradient(45deg, #fb3 50%, #58a 0);
+  background-size: 30px 30px;
+}
