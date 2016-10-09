@@ -6,6 +6,6 @@
 
 /* Verticle Strips */
 body {
-  background: linear-gradient(45deg, #fb3 50%, #58a 0);
-  background-size: 30px 30px;
+  background: repeating-linear-gradient(45deg, #fb3, #58a 30px);
+  background-size: 42.4px 42.4px;
 }
