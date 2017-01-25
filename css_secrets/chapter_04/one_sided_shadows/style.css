@@ -1,0 +1,27 @@
+
+/* shadow on 1 side only */
+.shadow-1 {
+  background: #fb3;
+  height: 4in;
+  width: 4in;
+  box-shadow: 0 6px 4px -4px rgba(0,0,0,.5)
+}
+
+/* shadow on 2 adjacent sides */
+.shadow-2 {
+  margin-top: 1in;
+  background: #fb3;
+  height: 4in;
+  width: 4in;
+  box-shadow: 3px 3px 6px -3px rgba(0,0,0,.5)
+}
+
+/* shadow on left and right side only */
+.shadow-3 {
+  margin-top: 1in;
+  background: #fb3;
+  height: 4in;
+  width: 4in;
+  box-shadow: 6px 0 6px -6px rgba(0,0,0,.5),
+             -6px 0 6px -6px rgba(0,0,0,.5);
+}
