@@ -1,0 +1,35 @@
+body {
+  font-size: 40px;
+}
+
+div {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justrify-content: center;
+  vertical-alignment: bottom;
+  box-sizing: border-box;
+  width: 5.9em;
+  height: 5.2em;
+  margin: .6em;
+  background: #fb3;
+  /*box-shadow: .1em .1em .1em .3em rgba(0,0,0,.5);*/
+  filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
+}
+
+.speech {
+  border-radius: .3em;
+}
+
+.speech::before {
+  content: '';
+  position: absolute;
+  top: 1em;
+  right: -.7em;
+  width: 0;
+  height: 0;
+  border: 1em solid transparent;
+  border-left-color: #fb3;
+  border-right-width: 0;
+
+}
