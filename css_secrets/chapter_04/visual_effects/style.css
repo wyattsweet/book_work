@@ -1,0 +1,14 @@
+
+.tinted-image {
+  height: 700px;
+  width: 500px;
+  background-size: cover;
+  background-color: hsl(335, 100%, 30%);
+  background-blend-mode: luminosity;
+  background-image:url(me.jpg);
+  transition: .5s background-color;
+}
+
+.tinted-image:hover {
+  background-color: transparent;
+}
