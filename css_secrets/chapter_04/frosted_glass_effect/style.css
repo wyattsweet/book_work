@@ -1,0 +1,21 @@
+body, main::before {
+  background: url("http://csssecrets.io/images/tiger.jpg") 0 / cover fixed;
+  text-align: center;
+}
+
+main {
+  background: hsla(0,0%,100%,.3);
+  margin-top: 20%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  filter: blur(5px);
+  z-index: -1;
+  margin: -30px;
+}
