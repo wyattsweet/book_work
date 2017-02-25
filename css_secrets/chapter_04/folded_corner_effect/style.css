@@ -1,0 +1,18 @@
+body {
+  font-size: 12px;
+}
+
+div {
+  width: 40em;
+  height: 40em; 
+  background: lightgreen; /* Fallback */
+}
+
+/* 45 deg Solution */
+
+.module-one {
+  background: linear-gradient(to left bottom, 
+              transparent 50%, rgba(0,0,0,0.4) 0)
+              no-repeat 100% 0 / 6em 6em, 
+              linear-gradient(-135deg, transparent 4.2em, lightgreen 0);
+}
