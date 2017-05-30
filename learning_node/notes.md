@@ -15,7 +15,7 @@ To discover V8 options you can run `$ node --v8-options`
 2. Global - In the browser when you create a global object, it's available everywhere. When you create a global object in Node it's restricted to the module or application. Global does share access to globally available objects and functions (such as the process object) across all environments.
 3. Process: Provides a bridge between the Node Application and its runtime environemnt. Standard I/O occurs through process.
 
-**The Process Object**
+###The Process Object
 
 Standard streams are pre-established communication channels between application and the environment. They consist of: 
 
@@ -35,5 +35,17 @@ These create a readable stream for each channel respectively that can be used in
 
 The process I/O functions inherit from `EventEmitter`. The process incoming data with `process.stdin` first thing you need to do is set the encoding for the string `process.stdin.setEncoding('utf8')`.
 
-**Buffers, Typed Arrays, and Strings**
+###Buffers, Typed Arrays, and Strings
 
+**Buffers**
+
+Buffers are a region in physical memory to temporarily store data while it is being moved from one place to another.
+
+In browser based JavaScript there is something called an ArrayBuffer to handle binary data. It's an object used to represent a generic, fixed-length raw binary data buffer.
+
+In Node the solution to this is Buffer. Node's buffer is the primary data structure used with most I/O. **The buffer is raw binary data that's been allocated outside the V8 heap.** Once allocated it can't be resized.
+
+If `buffer.toString()` gets gets an incomplete sequence of UTF-8 characters it returns gibberish.
+On the other hand `buffer.StringDecoder` buffers the incomplete sequence until it's complete, then returns the result. 
+
+###Buffer Manipulation
