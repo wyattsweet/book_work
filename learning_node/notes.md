@@ -48,4 +48,8 @@ In Node the solution to this is Buffer. Node's buffer is the primary data struct
 If `buffer.toString()` gets gets an incomplete sequence of UTF-8 characters it returns gibberish.
 On the other hand `buffer.StringDecoder` buffers the incomplete sequence until it's complete, then returns the result. 
 
-###Buffer Manipulation
+###Node's Callback and Asynchronous Event Handling
+JavaScript is single threaded, making it inherintly synchronous meaning it executes line by line until the until the end. JS and Node use the event loop to handle asychronisity (versus the threaded approach). When a time consuming process is invoked the app goes on its merry way. The process with emit an event signaling when it's done. Any dependent functionality can subscribe to the event and get invoked with the event related data. This is usually done with callbacks or promises.
+
+###Creating an Asynchronous Callback Function
+
