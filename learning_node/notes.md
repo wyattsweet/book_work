@@ -51,5 +51,41 @@ On the other hand `buffer.StringDecoder` buffers the incomplete sequence until i
 ###Node's Callback and Asynchronous Event Handling
 JavaScript is single threaded, making it inherintly synchronous meaning it executes line by line until the until the end. JS and Node use the event loop to handle asychronisity (versus the threaded approach). When a time consuming process is invoked the app goes on its merry way. The process with emit an event signaling when it's done. Any dependent functionality can subscribe to the event and get invoked with the event related data. This is usually done with callbacks or promises.
 
-###Creating an Asynchronous Callback Function
+###EventEmitter
 
+Anytime an object emits an event in node it's using EventEmitter. Understanding how EventEmitter works and how to use it are two important concepts of Node development. EventEmitter enables asynchronous event handling in Node.
+
+Two essential tasks with EventEmitter are to attach an event handler and emit an actual event.
+
+```js
+var events = require('events')
+// creates an instance of EventEmitter
+var em = new events.EventEmitter();
+
+// create an event handler. First parameter is the name of the event, second is the cb to perform some functionality
+em.on('someevent', function(data) {...});
+
+if (somecriteria) {
+	// emit the event
+	enm.emit('data');
+}
+
+```
+
+In practice other objects need to inherit from EventEmitter. Another Node object `Util` has a method `Util.inherits()` allows one constructor to inherit the prototype methods of another, a superconstructor.
+
+```js
+var util = require('util');
+
+// Creates the inheritance
+util.inherits(Someobj, EventEmitter);
+
+// Now you can call .on and .emit on Someobj
+Someobj.prototype.someMethod = () => {
+	thos.emit('event');
+}
+
+Someobjinstance.on('event', () => 'do something');
+```
+
+### The Node Event Loop and Timers
