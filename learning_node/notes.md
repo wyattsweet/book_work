@@ -102,5 +102,7 @@ Other Node specific timer-like functions
 - `setImmediate()`: creates an event which has precedence over those created by `setTimeout()` or `setInterval()` but not I/O events.
 - `clearImmediate()`
 
+similar to `process.nextTick()` which is invoked once the current event loop is finished but before any new I/O events are added, used extensively to implement asynchronous functions in Node.
+
 ### Nested Callbacks and Exception Handling
 
