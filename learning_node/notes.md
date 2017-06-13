@@ -89,3 +89,18 @@ Someobjinstance.on('event', () => 'do something');
 ```
 
 ### The Node Event Loop and Timers
+
+If you assign `setTimeout` to a variable you can cancel it by passing that variable to `clearTimeout`. `setInterval` can be passed to `clearInterval`. 
+
+Node specific functions you can use which are returned when you call `setTimeout()` or `setInterval()`: 
+
+- `ref()`: This keeps the program going until the timer has processed. 
+- `unref()`: If a timer is the only event in the queue, this will cancel it.
+
+Other Node specific timer-like functions
+
+- `setImmediate()`: creates an event which has precedence over those created by `setTimeout()` or `setInterval()` but not I/O events.
+- `clearImmediate()`
+
+### Nested Callbacks and Exception Handling
+
