@@ -106,3 +106,15 @@ similar to `process.nextTick()` which is invoked once the current event loop is 
 
 ### Nested Callbacks and Exception Handling
 
+When an error occurs in a callback, you can print the stack trace like so -
+
+```
+var fs = require('fs');
+
+fs.readFile('./apple.txt', 'utf8', function(err, data) {
+	if (err) {
+		console.error(err);
+	}
+})
+```
+
