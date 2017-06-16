@@ -118,3 +118,14 @@ fs.readFile('./apple.txt', 'utf8', function(err, data) {
 })
 ```
 
+## Chapter 3: Basics of Node Modules and Node Package Manager (npm)
+
+When requesting a new module into your application first Node checks to see if the module has been cached. Node caches the module the first time it's accessed.
+
+If the module isn't cached Node checks to see if it's a native module. If it's a native module a function is used specifically for native.
+
+If it's not native a new module object is created and the modules public facing functionality is returned to the application.
+
+As part of loading the module, node has to resolve a location for it. First core modules have priority. You can call your module http but Node is going to load the native http module first (unless you supply a specific path). You don't need to supply a file extension, node will look for the following in order `.js` `.json` and `.node`.
+
+If no path is provided it first looks in the `node_modules` directory of the project if it's not there it looks in the subdirectories `node_modules` directory and then the `node_modules` directory one level out. Finally, it looks for globally installed modules.
