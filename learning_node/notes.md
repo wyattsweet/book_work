@@ -129,3 +129,26 @@ If it's not native a new module object is created and the modules public facing 
 As part of loading the module, node has to resolve a location for it. First core modules have priority. You can call your module http but Node is going to load the native http module first (unless you supply a specific path). You don't need to supply a file extension, node will look for the following in order `.js` `.json` and `.node`.
 
 If no path is provided it first looks in the `node_modules` directory of the project if it's not there it looks in the subdirectories `node_modules` directory and then the `node_modules` directory one level out. Finally, it looks for globally installed modules.
+
+---
+
+`Module.require()` calls another internal function `Module._load()`
+
+
+###Sandboxing and the VM Module
+
+If you need to execute an arbitrary chunk of JS in you Node app, you can do it using the VM module to sandbox the script. This isn't completely trustworthy though. The only safe way is to do it in a seperate process.
+
+Scripts can be precompiled using the the vm.script object, or passed in as a function call to vm. THere are also 3 types of functions –
+
+`script.runInNewContext()` or `vm.runInNewContext()` runs the script in the new context and the script doesn't have access to local variables or the global object. *see 02_vm.js*
+
+`script.runInThisContext()` gives the script access to the global variables.
+
+You can load in the code from a file, precompile and run in the sandbox - 
+
+*see 03_loadInScript/*
+
+`script.runInContext()` Takes a *contextualized* sandbox meaning the context must be explicitly created.
+
+###An In-Depth Exploration of NPM
